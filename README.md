@@ -6,12 +6,9 @@
 
 </div>
 
-<!-- Project Status & Socials -->
+<!-- Project Status -->
 <p align="center">
   <img src="https://img.shields.io/badge/Project_Status-Complete-brightgreen?style=for-the-badge" alt="Project Status: Complete"/>
-  <!-- Optional: Add your social links -->
-  <!-- <a href="YOUR_LINKEDIN_URL"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a> -->
-  <!-- <a href="YOUR_PORTFOLIO_URL"><img src="https://img.shields.io/badge/Portfolio-WebApp-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/></a> -->
 </p>
 
 <!-- Introduction Card -->
@@ -26,34 +23,39 @@
   </table>
 </div>
 
+
+---
+
+## 🏗️ Architecture Diagram
+
+The following diagram illustrates the high-level architecture and the flow of the CI/CD pipeline, from a code commit on GitHub to the final deployment.
+
+<p align="center">
+<img width="3420" height="1096" alt="image" src="https://github.com/user-attachments/assets/31cfbfd9-f8b5-4832-97c1-4759714a64db" />
+
+</p>
+
 ---
 
 ## 🗺️ Project Roadmap
 
 This project is documented in seven distinct phases. Use the links below to navigate to a specific section.
 
-*   [Phase 1: Foundation & GitHub Setup](#phase-1)
+*   [Phase 1: Set Up a Web App in the Cloud](#phase-1)
 *   [Phase 2: Artifact Management with AWS CodeArtifact](#phase-2)
 *   [Phase 3: Automated Builds with AWS CodeBuild](#phase-3)
 *   [Phase 4: Infrastructure as Code with AWS CloudFormation](#phase-4)
 *   [Phase 5: Preparing for Deployment with CodeDeploy](#phase-5)
 *   [Phase 6: Configuring Automated Deployments with AWS CodeDeploy](#phase-6)
 *   [Phase 7: Executing and Verifying the Deployment](#phase-7)
-
----
-
-## Architecture Diagram
-
-The following diagram illustrates the high-level architecture and the flow of the CI/CD pipeline, from a code commit on GitHub to the final deployment.
-
-<img width="1173" height="386" alt="architecture-today2" src="https://github.com/user-attachments/assets/70c93153-e71b-43d8-8b02-38036d65631b" />
+*   [Conclusion & Key Learnings](#conclusion)
 
 
 ---
 
 <details id="phase-1">
 <summary>
-<h3>Phase 1: Foundation & GitHub Setup 🚀</h3>
+<h3>🚀 Set Up a Web App in the Cloud</h3>
 </summary>
 
 This foundational phase involved provisioning a secure AWS environment, scaffolding a web application, and establishing a version control workflow with Git and GitHub.
@@ -61,7 +63,7 @@ This foundational phase involved provisioning a secure AWS environment, scaffold
 #### **Cloud Infrastructure & Security** 🌩️
 My key tasks were:
 *   **Created a dedicated IAM Admin User** to avoid using the root account for all operations.
-*   **Launched a new `t2.micro` EC2 instance** running Amazon Linux 2023 to serve as the application host.
+*   **Launched a new `t3.micro` EC2 instance** running Amazon Linux 2023 to serve as the application host.
 *   **Configured the instance's Security Group** to restrict SSH access strictly to my personal IP address.
 *   **Generated and securely stored** a new `.pem` key pair for authenticating my SSH connections.
 
@@ -97,7 +99,7 @@ Finally, I established a version control workflow. My key tasks were:
 
 <details id="phase-2">
 <summary>
-<h3>Phase 2: Artifact Management with AWS CodeArtifact 📦</h3>
+<h3>📦 Artifact Management with AWS CodeArtifact </h3>
 </summary>
 
 In this phase, I established a secure, centralized artifact repository using AWS CodeArtifact. This ensures that all software packages for my project are managed in a private, reliable location.
@@ -139,7 +141,7 @@ Finally, I connected my Maven project to the new repository and confirmed the in
 
 <details id="phase-3">
 <summary>
-<h3>Phase 3: Automated Builds with AWS CodeBuild ⚙️</h3>
+<h3>⚙️ Automated Builds with AWS CodeBuild </h3>
 </summary>
 
 In this phase, I automated the build process for my application. I configured AWS CodeBuild to pull the source code from GitHub, compile it using dependencies from CodeArtifact, and store the resulting artifact in an S3 bucket.
@@ -179,7 +181,7 @@ Finally, I told CodeBuild how to build the project and ran the first test. My ke
 
 <details id="phase-4">
 <summary>
-<h3>Phase 4: Infrastructure as Code with AWS CloudFormation 🏗️</h3>
+<h3>🏗️ Infrastructure as Code with AWS CloudFormation </h3>
 </summary>
 
 In this phase, I provisioned the production environment using Infrastructure as Code (IaC). I used AWS CloudFormation to create a separate, dedicated set of resources for deploying the live application, ensuring a clean separation from the development environment.
@@ -210,7 +212,7 @@ After launching the stack, I monitored its creation to ensure all resources were
 
 <details id="phase-5">
 <summary>
-<h3>Phase 5: Preparing for Deployment with CodeDeploy 📜</h3>
+<h3>📜 Preparing for Deployment with CodeDeploy </h3>
 </summary>
 
 In this phase, I prepared the instruction manual for AWS CodeDeploy. This involved creating a series of scripts to manage the application lifecycle and a manifest file (`appspec.yml`) to orchestrate the deployment process.
@@ -250,7 +252,7 @@ Finally, I added these crucial new files to version control to make them availab
 
 <details id="phase-6">
 <summary>
-<h3>Phase 6: Configuring Automated Deployments with AWS CodeDeploy 🤖</h3>
+<h3>🤖 Configuring Automated Deployments with AWS CodeDeploy</h3>
 </summary>
 
 In this phase, I configured AWS CodeDeploy, which automates the process of deploying my application to the production server. This involved creating an application, defining a deployment group, and setting up the necessary permissions.
@@ -281,7 +283,7 @@ This is where I defined the specifics of the deployment strategy. My key tasks w
 
 <details id="phase-7">
 <summary>
-<h3>Phase 7: Executing and Verifying the Deployment ✅</h3>
+<h3>✅ Executing and Verifying the Deployment</h3>
 </summary>
 
 In this final phase, I put all the pieces together by manually triggering a deployment with AWS CodeDeploy. This involved pointing CodeDeploy to the correct build artifact, monitoring the deployment process, and finally verifying that the web application was successfully running on the production server.
@@ -315,4 +317,23 @@ The moment of truth! I verified that the deployment was a success. My key tasks 
 *A screenshot of my live web application running in the browser!*
 > <!-- Add screenshot here -->
 
-</details>```
+</details>
+
+---
+
+<div id="conclusion">
+
+## 🎓 Conclusion & Key Learnings
+
+This project was a comprehensive journey through the creation of a modern, automated CI/CD pipeline on AWS. By integrating multiple services, I successfully transformed a manual, multi-step process into a streamlined workflow that starts with a simple `git push`.
+
+Key takeaways from this project include:
+*   **End-to-End Cloud Automation**: I successfully orchestrated a full CI/CD pipeline using a suite of interconnected AWS services (CodeArtifact, CodeBuild, CodeDeploy, CloudFormation), demonstrating the power of a fully cloud-native approach.
+*   **Infrastructure as Code (IaC)**: Using AWS CloudFormation to define and provision the entire production environment reinforced the importance of creating repeatable, predictable, and version-controlled infrastructure.
+*   **Configuration as Code**: Defining the build and deployment logic in `buildspec.yml` and `appspec.yml` files, which live alongside the application code, is a core tenet of modern DevOps that I successfully implemented.
+*   **Secure Dependency Management**: I learned how to use AWS CodeArtifact to create a private, secure repository for Maven dependencies, preventing reliance on public repositories and enhancing security.
+*   **The Importance of IAM**: This project highlighted the critical role of IAM policies and roles in securely connecting different services, ensuring each component has only the permissions it needs to function.
+
+Ultimately, this project provided invaluable hands-on experience in building the kind of automated, secure, and efficient systems that power modern software development.
+
+</div>
