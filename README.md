@@ -62,7 +62,8 @@ This foundational phase establishes the initial code repository on GitHub and th
 
 <p align="center">
   <em>Highlighting the GitHub repository and the initial development EC2 instance.</em>
-  > <!-- Add architecture screenshot for Phase 1 here -->
+<img width="2694" height="894" alt="image" src="https://github.com/user-attachments/assets/351f828b-1235-4d75-9b9a-516ab1390374" />
+
 </p>
 
 ---
@@ -112,7 +113,8 @@ In this phase, I integrate AWS CodeArtifact as a secure, private repository to s
 
 <p align="center">
   <em>Highlighting the integration of AWS CodeArtifact as our private package manager.</em>
-  > <!-- Add architecture screenshot for Phase 2 here -->
+  <img width="2760" height="858" alt="image" src="https://github.com/user-attachments/assets/d6f31b00-a5d5-4f36-a27e-a475f0b74cdc" />
+
 </p>
 
 ---
@@ -160,7 +162,8 @@ Here, I automate the Continuous Integration (CI) part of the pipeline by using A
 
 <p align="center">
   <em>Highlighting the CI stage: CodeBuild pulling from GitHub and storing artifacts in S3.</em>
-  > <!-- Add architecture screenshot for Phase 3 here -->
+  <img width="2040" height="664" alt="image" src="https://github.com/user-attachments/assets/6d5390f5-1765-48ce-82f5-3f4f5f346841" />
+
 </p>
 
 ---
@@ -206,7 +209,8 @@ This phase focuses on provisioning the production environment, where a new, sepa
 
 <p align="center">
   <em>Highlighting CloudFormation creating the dedicated production EC2 instance.</em>
-  > <!-- Add architecture screenshot for Phase 4 here -->
+  <img width="3526" height="1168" alt="image" src="https://github.com/user-attachments/assets/0c9620e1-366e-41b1-a2e2-1962deadc890" />
+
 </p>
 
 ---
@@ -243,7 +247,8 @@ In this preparation phase, I create the deployment scripts and the `appspec.yml`
 
 <p align="center">
   <em>Highlighting the addition of the `appspec.yml` file and scripts to the GitHub repository.</em>
-  > <!-- Add architecture screenshot for Phase 5 here -->
+<img width="3542" height="1086" alt="image" src="https://github.com/user-attachments/assets/273e8ba0-d176-4a39-bbde-740c77dd4c75" />
+
 </p>
 
 ---
@@ -289,7 +294,7 @@ This is where I configure the AWS CodeDeploy service itself, creating an Applica
 
 <p align="center">
   <em>Highlighting the CodeDeploy service being configured to target the production EC2 instance.</em>
-  > <!-- Add architecture screenshot for Phase 6 here -->
+<img width="3510" height="1082" alt="image" src="https://github.com/user-attachments/assets/3d853b55-1ea9-4769-9fb7-f378322a133d" />
 </p>
 
 ---
@@ -328,7 +333,7 @@ In this final phase, I execute the complete deployment process, where CodeDeploy
 
 <p align="center">
   <em>Highlighting the final step: CodeDeploy deploying the artifact from S3 to the production server.</em>
-  > <!-- Add architecture screenshot for Phase 7 here -->
+<img width="3598" height="1152" alt="image" src="https://github.com/user-attachments/assets/ec907201-1542-41cd-9ed3-e5a196bd1d54" />
 </p>
 
 ---
